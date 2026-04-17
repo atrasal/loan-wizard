@@ -21,10 +21,10 @@
 - [Project Structure](#-project-structure)
 - [Getting Started](#-getting-started)
 - [Application Flow](#-application-flow)
-- [Screenshots](#-screenshots)
 - [AI/ML Capabilities](#-aiml-capabilities)
 - [Risk Assessment Engine](#-risk-assessment-engine)
 - [Compliance & Audit](#-compliance--audit)
+- [Demo vs Production](#-demo-vs-production)
 - [Browser Compatibility](#-browser-compatibility)
 - [Future Roadmap](#-future-roadmap)
 - [Team](#-team)
@@ -218,7 +218,7 @@ loan-wizard/
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/loan-wizard.git
+git clone https://github.com/atrasal/loan-wizard.git
 cd loan-wizard
 
 # Install dependencies
@@ -395,6 +395,24 @@ Every session generates an immutable audit trail satisfying RBI KYC norms:
 
 ---
 
+## 🧪 Demo vs Production
+
+This is a **hackathon prototype** demonstrating a production-ready architecture. Key distinctions:
+
+| Component | Demo (Current) | Production-Ready |
+|-----------|---------------|------------------|
+| **Speech-to-Text** | ✅ Live — Web Speech API | Same (browser-native) |
+| **Face Detection** | ✅ Live — @vladmandic/face-api | Same + deepfake detection |
+| **Geolocation** | ✅ Live — Browser API + BigDataCloud | Same |
+| **Video Recording** | ✅ Live — MediaRecorder API | Same |
+| **LLM Classification** | 🔶 Simulated — deterministic rules | Groq/Llama 3.3 API |
+| **Bureau Score (CIBIL)** | 🔶 Simulated — income-based formula | CIBIL/Experian API |
+| **Aadhaar KYC** | 🔶 Not integrated | UIDAI DigiLocker API |
+
+> **4 out of 7 AI modules run LIVE in the browser.** The simulated modules (LLM, CIBIL, Aadhaar) are architecturally designed for drop-in API replacement with zero frontend changes.
+
+---
+
 ## 🔮 Future Roadmap
 
 - 🔗 **Aadhaar e-KYC** — UIDAI DigiLocker API integration
@@ -403,6 +421,13 @@ Every session generates an immutable audit trail satisfying RBI KYC norms:
 - 🔒 **Deepfake Detection** — Blink analysis, head movement, texture analysis
 - 📱 **WhatsApp Integration** — Campaign links via WhatsApp Business API
 - 📊 **Ops Dashboard** — Conversion funnels, drop-off analysis, session monitoring
+
+---
+
+## 📖 Documentation
+
+- **[DOCUMENTATION.md](DOCUMENTATION.md)** — Detailed slide-by-slide content for PPT/presentation generation
+- **[presentation.html](presentation.html)** — Browser-based reveal.js pitch deck (13 slides)
 
 ---
 

@@ -83,6 +83,10 @@ A single video call replaces the entire loan application process — from KYC ve
 
 **Tech Badges:** Vite 6, ES Modules, Web Speech API, face-api.js, TensorFlow.js, MediaRecorder, Geolocation API
 
+**Important Note for Judges:**
+4 out of 7 AI modules (Speech-to-Text, Face Detection, Geolocation, Video Recording) run LIVE in the browser — these are not mocked.
+The remaining 3 (LLM Classification, CIBIL Bureau Score, Aadhaar KYC) are simulated with deterministic rules but architecturally designed for drop-in API replacement (Groq/Llama 3.3, CIBIL/Experian, UIDAI DigiLocker) with zero frontend changes.
+
 **Visual suggestion:** Layered rectangle diagram (4 stacked layers). Right side shows "Why Browser-First?" benefits with checkmark icons.
 
 ---
@@ -336,8 +340,8 @@ The simulated LLM analyzes all collected data to classify the customer:
 
 **Tags:** 🎥 Video KYC • 🤖 AI-Powered • 🛡️ Compliant • ⚡ Real-Time • 📌 Zero Backend
 
-**GitHub:** [Repository Link]
-**Live Demo:** http://localhost:5173
+**GitHub:** https://github.com/atrasal/loan-wizard
+**Live Demo:** Run locally with `npm run dev` → http://localhost:5173
 
 **Built with ❤️ by Team AiMatrix for the Poonawalla Fincorp Hackathon 2026**
 
