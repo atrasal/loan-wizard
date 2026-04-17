@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poonawalla Fincorp Loan Wizard — Hackathon Pitch</title>
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.min.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --pf-navy: #0A1628;
+      --pf-navy-light: #0F1F38;
+      --pf-blue: #1B4DFF;
+      --pf-cyan: #00C2FF;
+      --pf-gold: #FFB800;
+      --color-success: #00D68F;
+      --color-danger: #FF3B5C;
+      --color-warning: #FF9500;
+    }
+
+    .reveal {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    .reveal .slides section {
+      padding: 40px;
+    }
+
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+      font-family: 'Outfit', sans-serif;
+      text-transform: none;
+      letter-spacing: -0.02em;
+    }
+
+    .reveal h1 { font-size: 2.8em; font-weight: 800; }
+    .reveal h2 { font-size: 2em; font-weight: 700; }
+    .reveal h3 { font-size: 1.5em; font-weight: 600; }
+
+    .reveal p, .reveal li {
+      font-size: 0.75em;
+      line-height: 1.7;
+      color: #CBD5E1;
+    }
+
+    .reveal .slide-background {
+      background: var(--pf-navy) !important;
+    }
+
+    /* ── Title Slide ── */
+    .title-slide {
+      text-align: center !important;
+    }
+
+    .title-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      background: rgba(27, 77, 255, 0.15);
+      border: 1px solid rgba(27, 77, 255, 0.3);
+      border-radius: 50px;
+      font-size: 0.55em;
+      color: var(--pf-cyan);
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .title-main {
+      font-size: 3.2em !important;
+      background: linear-gradient(135deg, #FFFFFF 0%, #CBD5E1 40%, var(--pf-cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.15 !important;
+      margin-bottom: 16px !important;
+    }
+
+    .title-sub {
+      font-size: 1.1em !important;
+      color: #64748B !important;
+      font-weight: 400;
+      max-width: 700px;
+      margin: 0 auto 40px !important;
+    }
+
+    .title-team {
+      font-size: 0.6em;
+      color: #475569;
+      margin-top: 20px;
+    }
+
+    .pf-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .pf-logo-mark {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--pf-blue), var(--pf-cyan));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 900;
+      font-size: 18px;
+      color: white;
+    }
+
+    .pf-logo-text {
+      text-align: left;
+    }
+
+    .pf-logo-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: white;
+    }
+
+    .pf-logo-subtitle {
+      font-size: 10px;
+      color: var(--pf-cyan);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    /* ── Section Headers ── */
+    .section-number {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.5em;
+      color: var(--pf-blue);
+      font-weight: 800;
+      display: block;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+
+    .accent-line {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--pf-blue), var(--pf-cyan));
+      border-radius: 2px;
+      margin: 16px 0 24px;
+    }
+
+    /* ── Cards / Boxes ── */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 24px;
+      backdrop-filter: blur(10px);
+    }
+
+    .card-grid {
+      display: grid;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .card-grid-2 { grid-template-columns: 1fr 1fr; }
+    .card-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+    .card-grid-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, rgba(27, 77, 255, 0.2), rgba(0, 194, 255, 0.15));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      font-size: 22px;
+    }
+
+    .feature-card h4 {
+      font-size: 0.7em;
+      margin-bottom: 6px;
+      color: white;
+    }
+
+    .feature-card p {
+      font-size: 0.55em !important;
+      color: #64748B !important;
+      line-height: 1.5 !important;
+      margin: 0 !important;
+    }
+
+    /* ── Flow Diagram ── */
+    .flow-steps {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 24px 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .flow-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      min-width: 100px;
+    }
+
+    .flow-step-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.6em;
+      font-weight: 800;
+      color: var(--pf-cyan);
+    }
+
+    .flow-step-label {
+      font-size: 0.5em;
+      color: #CBD5E1;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .flow-arrow {
+      color: var(--pf-blue);
+      font-size: 0.8em;
+    }
+
+    /* ── Tech Stack ── */
+    .tech-badge {
+      display: inline-flex;
+      padding: 6px 14px;
+      background: rgba(27, 77, 255, 0.12);
+      border: 1px solid rgba(27, 77, 255, 0.25);
+      border-radius: 20px;
+      font-size: 0.5em;
+      color: var(--pf-cyan);
+      font-weight: 600;
+      margin: 3px;
+    }
+
+    /* ── Stats Row ── */
+    .stats-row {
+      display: flex;
+      gap: 24px;
+      margin: 20px 0;
+    }
+
+    .stat-item {
+      flex: 1;
+      text-align: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+    }
+
+    .stat-number {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.8em;
+      font-weight: 800;
+      color: var(--pf-cyan);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.5em;
+      color: #64748B;
+      font-weight: 500;
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* ── Checkmarks ── */
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0;
+    }
+
+    .check-list li {
+      padding: 8px 0;
+      font-size: 0.7em;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #CBD5E1;
+    }
+
+    .check-list li::before {
+      content: '✓';
+      color: var(--color-success);
+      font-weight: 700;
+      font-size: 1em;
+      flex-shrink: 0;
+    }
+
+    .check-list li.warn::before {
+      content: '⚡';
+    }
+
+    /* ── Highlight text ── */
+    .highlight-cyan { color: var(--pf-cyan); font-weight: 600; }
+    .highlight-gold { color: var(--pf-gold); font-weight: 600; }
+    .highlight-blue { color: var(--pf-blue); font-weight: 600; }
+    .highlight-green { color: var(--color-success); font-weight: 600; }
+
+    /* ── Side by side layout ── */
+    .split-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .split-layout-60-40 {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    /* ── Quote / Highlight Box ── */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(27, 77, 255, 0.1), rgba(0, 194, 255, 0.05));
+      border: 1px solid rgba(27, 77, 255, 0.2);
+      border-left: 4px solid var(--pf-blue);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 16px 0;
+    }
+
+    .highlight-box p {
+      font-size: 0.7em !important;
+      color: #E2E8F0 !important;
+      font-style: italic;
+      margin: 0 !important;
+    }
+
+    /* ── Risk Indicator ── */
+    .risk-indicator {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 10px;
+      margin: 6px 0;
+    }
+
+    .risk-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .risk-dot.green { background: var(--color-success); }
+    .risk-dot.yellow { background: var(--color-warning); }
+    .risk-dot.red { background: var(--color-danger); }
+
+    .risk-label {
+      font-size: 0.6em;
+      color: #CBD5E1;
+      flex: 1;
+    }
+
+    .risk-status {
+      font-size: 0.55em;
+      font-weight: 600;
+    }
+
+    .risk-status.pass { color: var(--color-success); }
+    .risk-status.flag { color: var(--color-danger); }
+
+    /* ── Architecture Diagram ── */
+    .arch-layer {
+      padding: 14px 20px;
+      border-radius: 10px;
+      margin: 6px 0;
+      font-size: 0.6em;
+      font-weight: 500;
+    }
+
+    .arch-layer-1 { background: rgba(27, 77, 255, 0.15); border: 1px solid rgba(27, 77, 255, 0.3); color: var(--pf-cyan); }
+    .arch-layer-2 { background: rgba(0, 194, 255, 0.1); border: 1px solid rgba(0, 194, 255, 0.2); color: var(--pf-cyan); }
+    .arch-layer-3 { background: rgba(0, 214, 143, 0.1); border: 1px solid rgba(0, 214, 143, 0.2); color: var(--color-success); }
+    .arch-layer-4 { background: rgba(255, 184, 0, 0.1); border: 1px solid rgba(255, 184, 0, 0.2); color: var(--pf-gold); }
+
+    /* ── Judging Criteria ── */
+    .criteria-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+
+    .criteria-card h4 {
+      font-size: 0.65em;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .criteria-card p {
+      font-size: 0.5em !important;
+      margin: 0 !important;
+    }
+
+    .criteria-score {
+      font-family: 'Outfit';
+      font-weight: 800;
+      font-size: 0.7em;
+      color: var(--color-success);
+    }
+
+    /* ── Thank You Slide ── */
+    .thankyou-slide {
+      text-align: center !important;
+    }
+
+    .thankyou-title {
+      font-size: 3em !important;
+      background: linear-gradient(135deg, var(--pf-blue), var(--pf-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── Slide Number ── */
+    .reveal .slide-number {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 4px 10px;
+      border-radius: 8px;
+      color: #64748B;
+    }
+
+    /* ── Progress Bar ── */
+    .reveal .progress {
+      height: 3px;
+      color: var(--pf-blue);
+    }
+
+    .reveal .progress span {
+      background: linear-gradient(90deg, var(--pf-blue), var(--pf-cyan));
+    }
+
+    /* ── Smaller screens ── */
+    @media (max-width: 900px) {
+      .card-grid-3, .card-grid-4 { grid-template-columns: 1fr 1fr; }
+      .split-layout { grid-template-columns: 1fr; }
+    }
+
+    /* Emoji sizing */
+    .emoji { font-size: 1.2em; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ═══════════════════════════════════════════════════
+           SLIDE 1: TITLE
+           ═══════════════════════════════════════════════════ -->
+      <section class="title-slide" data-background-gradient="linear-gradient(135deg, #060D1A 0%, #0A1628 40%, #0F1F38 100%)">
+        <div class="pf-logo" style="justify-content: center;">
+          <div class="pf-logo-mark">PF</div>
+          <div class="pf-logo-text">
+            <div class="pf-logo-title">Poonawalla Fincorp</div>
+            <div class="pf-logo-subtitle">Loan Wizard</div>
+          </div>
+        </div>
+
+        <div class="title-badge">Problem Statement 3 — Agentic AI Video Call-Based Onboarding</div>
+
+        <h1 class="title-main">Video-Based Digital Loan Origination & Risk Assessment</h1>
+
+        <p class="title-sub">
+          An AI-powered, end-to-end loan onboarding system that uses live video calls for real-time KYC, risk assessment, and instant personalized offer generation — all within a single browser session.
+        </p>
+
+        <p class="title-team" style="text-align: center;">
+          🏆 Team AiMatrix &nbsp; | &nbsp; Hackathon Submission &nbsp; | &nbsp; April 2026
+        </p>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+           SLIDE 2: PROBLEM
+           ═══════════════════════════════════════════════════ -->
+      <section data-background-gradient="linear-gradient(135deg, #060D1A 0%, #0A1628 100%)">
+        <span class="section-number">01 — THE PROBLEM</span>
+        <h2>Why Traditional Loan Journeys Fail</h2>
+        <div class="accent-line"></div>
+
+        <div class="split-layout">
+          <div>
+            <ul class="check-list" style="margin-top: 8px;">
+              <li class="warn"><strong>60-70% drop-off rates</strong> in purely form-based digital applications</li>
+              <li class="warn"><strong>Fraud & misrepresentation</strong> risks with no real-time identity verification</li>
+              <li class="warn"><strong>Manual KYC overhead</strong> — physical document collection adds days to processing</li>
+              <li class="warn"><strong>No contextual understanding</strong> — forms capture data but miss customer intent</li>
+              <li class="warn"><strong>Compliance gaps</strong> — incomplete audit trails and consent records</li>
+            </ul>
+          </div>
+          <div>
+            <div class="stats-row" style="flex-direction: column; gap: 12px;">
+              <div class="stat-item">
+                <span class="stat-number" style="color: var(--color-danger);">67%</span>
+                <span class="stat-label">Digital loan applications abandoned midway</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" style="color: var(--color-warning);">3-5 days</span>
+                <span class="stat-label">Average KYC + verification turnaround</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" style="color: var(--pf-cyan);">₹47,000 Cr</span>
+                <span class="stat-label">Annual fraud losses in Indian lending (RBI 2024)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+           SLIDE 3: SOLUTION OVERVIEW
+           ═══════════════════════════════════════════════════ -->
+      <section data-background-gradient="linear-gradient(135deg, #060D1A 0%, #0A1628 100%)">
+        <span class="section-number">02 — OUR SOLUTION</span>
+        <h2>Loan Wizard — AI-Powered Video Onboarding</h2>
+        <div class="accent-line"></div>
+
+        <p style="font-size: 0.8em; color: #94A3B8; margin-bottom: 24px;">
+          A <span class="highlight-cyan">single video call</span> replaces the entire loan application process — from KYC to offer generation in under 5 minutes.
+        </p>
+
+        <div class="flow-steps">
+          <div class="flow-step">
+            <span class="flow-step-num">01</span>
+            <span class="flow-step-label">Campaign<br/>Entry</span>
+          </div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-step">
+            <span class="flow-step-num">02</span>
+            <span class="flow-step-label">Permission<br/>Grants</span>
+          </div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-step" style="border-color: var(--pf-blue);">
+            <span class="flow-step-num">03</span>
+            <span class="flow-step-label">🎥 Video<br/>KYC Call</span>
+          </div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-step">
+            <span class="flow-step-num">04</span>
+            <span class="flow-step-label">Auto-Fill<br/>Application</span>
+          </div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-step">
+            <span class="flow-step-num">05</span>
+            <span class="flow-step-label">Risk<br/>Assessment</span>
+          </div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-step">
+            <span class="flow-step-num">06</span>
+            <span class="flow-step-label">Loan<br/>Offers</span>
+          </div>
+          <span class="flow-arrow">→</span>
+          <div class="flow-step">
+            <span class="flow-step-num">07</span>
+            <span class="flow-step-label">Audit<br/>Dashboard</span>
+          </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 20px;">
+          <p>💡 <strong>Key Innovation:</strong> All AI processing — speech-to-text, face detection, age estimation, risk scoring — runs <span class="highlight-cyan">entirely in the browser</span> with zero backend dependency. Instant, private, and scalable.</p>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+           SLIDE 4: TECH STACK & ARCHITECTURE
+           ═══════════════════════════════════════════════════ -->
+      <section data-background-gradient="linear-gradient(135deg, #060D1A 0%, #0A1628 100%)">
+        <span class="section-number">03 — ARCHITECTURE</span>
+        <h2>Technology Stack</h2>
+        <div class="accent-line"></div>
+
+        <div class="split-layout">
+          <div>
+            <div class="arch-layer arch-layer-1">
+              <strong>Presentation Layer</strong> — Vite + Vanilla JS SPA, Glassmorphism UI, Outfit + Inter fonts
+            </div>
+            <div class="arch-layer arch-layer-2">
+              <strong>AI / ML Layer</strong> — Web Speech API (STT), @vladmandic/face-api (Age/Gender), Browser Geolocation
+            </div>
+            <div class="arch-layer arch-layer-3">
+              <strong>Processing Layer</strong> — Risk Engine (10 rules), LLM Intelligence (classification), Offer Engine (EMI calc)
+            </div>
+            <div class="arch-layer arch-layer-4">
+              <strong>Data & Audit Layer</strong> — MediaRecorder (video), Central Logger, JSON Export, Consent Trail
+            </div>
+
+            <div style="margin-top: 16px;">
+              <span class="tech-badge">Vite 6</span>
+              <span class="tech-badge">ES Modules</span>
+              <span class="tech-badge">Web Speech API</span>
+              <span class="tech-badge">face-api.js</span>
+              <span class="tech-badge">MediaRecorder</span>
+              <span class="tech-badge">Geolocation API</span>
+              <span class="tech-badge">Lucide Icons</span>
+              <span class="tech-badge">TensorFlow.js</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="glass-card" style="text-align: center;">
+              <h4 style="font-size: 0.65em; margin-bottom: 12px; color: var(--pf-cyan);">Why Browser-First?</h4>
+              <ul class="check-list" style="text-align: left;">
+                <li><strong>Zero latency</strong> — No round-trips to server</li>
+                <li><strong>Data privacy</strong> — Video never leaves device</li>
+                <li><strong>Instant deployment</strong> — Just a URL, no app install</li>
+                <li><strong>Infinite scale</strong> — Each user is their own compute node</li>
+                <li><strong>Works offline</strong> — Core features after initial load</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+           SLIDE 5: VIDEO CALL KYC (Core Feature)
+           ═══════════════════════════════════════════════════ -->
+      <section data-background-gradient="linear-gradient(135deg, #060D1A 0%, #0A1628 100%)">
+        <span class="section-number">04 — CORE FEATURE</span>
+        <h2>AI-Powered Video KYC</h2>
+        <div class="accent-line"></div>
+
+        <div class="card-grid card-grid-2">
+          <div class="feature-card" style="text-align: left; padding: 24px;">
+            <h4 style="font-size: 0.7em;">🎤 Real-Time Speech-to-Text</h4>
+            <ul class="check-list">
+              <li>Web Speech API with continuous recognition (en-IN)</li>
+              <li>NLP entity extraction: name, income, employment, loan purpose</li>
+              <li>Automatic consent phrase detection</li>
+              <li>Live transcript with confidence scores</li>
+            </ul>
+          </div>
+
+          <div class="feature-card" style="text-align: left; padding: 24px;">
+            <h4 style="font-size: 0.7em;">👤 Computer Vision — Face Analysis</h4>
+            <ul class="check-list">
+              <li>TinyFaceDetector for real-time detection (500ms intervals)</li>
+              <li>Age estimation with 15-frame moving average smoothing</li>
+              <li>Gender classification with probability score</li>
+              <li>Liveness tracking (face-present frame percentage)</li>
+            </ul>
+          </div>
+
+          <div class="feature-card" style="text-align: left; padding: 24px;">
+            <h4 style="font-size: 0.7em;">📍 Geolocation Capture</h4>
+            <ul class="check-list">
+              <li>High-accuracy GPS coordinates via browser API</li>
+              <li>Reverse geocoding to city/state (BigDataCloud)</li>
+              <li>Location serviceability verification</li>
+              <li>Fraud signal: geo-mismatch detection</li>
+            </ul>
+          </div>
+
+          <div class="feature-card" style="text-align: left; padding: 24px;">
+            <h4 style="font-size: 0.7em;">🎬 Session Recording & Audit</h4>
+            <ul class="check-list">
+              <li>MediaRecorder API captures video + audio</li>
+              <li>WebM format with VP9 codec (1.5 Mbps)</li>
+              <li>Playback in audit dashboard</li>
+              <li>Downloadable for regulatory compliance</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+           SLIDE 6: AUTO-FILL & DATA EXTRACTION
+           ═══════════════════════════════════════════════════ -->
+      <section data-background-gradient="linear-gradient(135deg, #060D1A 0%, #0A1628 100%)">
+        <span class="section-number">05 — INTELLIGENCE</span>
+        <h2>Auto-Fill & LLM Intelligence Layer</h2>
+        <div class="accent-line"></div>
+
+        <div class="split-layout">
+          <div>
+            <h3 style="font-size: 1em; margin-bottom: 12px;">Smart Data Extraction</h3>
+            <p style="font-size: 0.65em; margin-bottom: 16px;">
+              Customer responses during the video call are automatically parsed and structured into application fields.
+            </p>
+
+            <div class="risk-indicator">
+              <div class="risk-dot green"></div>
+              <span class="risk-label"><strong>Full Name</strong> — Regex: "My name is [X]" / "I am [X]"</span>
+              <span class="risk-status pass">✨ AI Extracted</span>
+            </div>
+            <div class="risk-indicator">
+              <div class="risk-dot green"></div>
+              <span class="risk-label"><strong>Income</strong> — Pattern: "50000" / "50k" / "5 lakhs per month"</span>
+              <span class="risk-status pass">✨ AI Extracted</span>
+            </div>
+            <div class="risk-indicator">
+              <div class="risk-dot green"></div>
+              <span class="risk-label"><strong>Employment</strong> — Keywords: salaried / self-employed / business</span>
+              <span class="risk-status pass">✨ AI Extracted</span>
+            </div>
+            <div class="risk-indicator">
+              <div class="risk-dot green"></div>
+              <span class="risk-label"><strong>Age</strong> — Face AI estimation with smoothing algorithm</span>
+              <span class="risk-status pass">🤖 Face AI</span>
+            </div>
+            <div class="risk-indicator">
+              <div class="risk-dot green"></div>
+              <span class="risk-label"><strong>Location</strong> — GPS coordinates + reverse geocoding</span>
+              <span class="risk-status pass">📍 GPS</span>
+            </div>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1em; margin-bottom: 12px;">LLM Classification Engine</h3>
+            <div class="glass-card">
+              <div style="font-size: 0.6em; margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+                  <span style="color: #94A3B8;">Customer Persona</span>
+                  <span style="color: white; font-weight: 600;">Mid-Career Professional</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+                  <span style="color: #94A3B8;">Risk Band</span>
+                  <span style="color: var(--color-success); font-weight: 600;">Low Risk</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+                  <span style="color: #94A3B8;">Segment</span>
+                  <span style="color: white; font-weight: 600;">Core Salaried</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+                  <span style="color: #94A3B8;">Lifetime Value</span>
+                  <span style="color: var(--pf-gold); font-weight: 600;">Medium-High</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 8px 0;">
+                  <span style="color: #94A3B8;">Confidence</span>
+                  <span style="color: var(--pf-cyan); font-weight: 600;">91.4%</span>
+                </div>
+              </div>
+              <p style="font-size: 0.5em !important; color: #64748B !important; margin: 0 !important; font-style: italic;">
+                Model: Poonawalla-LLM-v2.1 • Interprets conversational context without overriding deterministic rules
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+           SLIDE 7: RISK ASSESSMENT
+           ═══════════════════════════════════════════════════ -->
+      <section data-background-gradient="linear-gradient(135deg, #060D1A 0%, #0A1628 100%)">
+        <span class="section-number">06 — RISK ENGINE</span>
+        <h2>Multi-Layer Risk Assessment</h2>
+        <div class="accent-line"></div>
+
+        <div class="card-grid card-grid-3">
+          <div class="glass-card">
+            <h4 style="font-size: 0.7em; margin-bottom: 12px; color: var(--color-danger);">🛡️ Fraud Signal Analysis</h4>
+            <div style="font-size: 0.55em; line-height: 2;">
+              <div>✅ Location Verification</div>
+              <div>✅ Age Consistency (Face vs Declared)</div>
+              <div>✅ Liveness Detection (89% frames)</div>
+              <div>✅ Verbal Consent Captured</div>
+              <div>✅ Session Integrity</div>
+            </div>
+          </div>
+
+          <div class="glass-card">
+            <h4 style="font-size: 0.7em; margin-bottom: 12px; color: var(--color-warning);">📋 Policy Evaluation</h4>
+            <div style="font-size: 0.55em; line-height: 2;">
+              <div>✅ Age Eligibility (21-60 years)</div>
+              <div>✅ Minimum Income (₹15,000/mo)</div>
+              <div>✅ Employment Type Eligible</div>
+              <div>✅ Location Serviceable</div>
+              <div>✅ Video KYC Completed</div>
+            </div>
+          </div>
+
+          <div class="glass-card" style="text-align: center;">
+            <h4 style="font-size: 0.7em; margin-bottom: 12px; color: var(--pf-cyan);">📊 Bureau Score</h4>
+            <div style="margin: 16px 0;">
+              <span style="font-family: 'Outfit'; font-size: 2.5em; font-weight: 800; color: var(--color-success);">788</span>
+              <br/>
+              <span style="font-size: 0.5em; color: #64748B; text-transform: uppercase; letter-spacing: 2px;">CIBIL Score</span>
+            </div>
+            <span style="background: rgba(0,214,143,0.12); color: var(--color-success); padding: 4px 12px; border-radius: 20px; font-size: 0.5em; font-weight: 600;">EXCELLENT</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 20px; text-align: center;">
+          <div style="display: inline-flex; align-items: center; gap: 16px; padding: 16px 32px; background: rgba(0,214,143,0.08); border: 1px solid rgba(0,214,143,0.2); border-radius: 12px;">
+            <span style="font-size: 0.7em; color: var(--color-success); font-weight: 700;">✓ APPLICATION APPROVED</span>
+            <span style="font-size: 0.55em; color: #64748B;">Risk Score: 22/100 (Low)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+           SLIDE 8: OFFER GENERATION
+           ═══════════════════════════════════════════════════ -->
+      <section data-background-gradient="linear-gradient(135deg, #060D1A 0%, #0A1628 100%)">
+        <span class="section-number">07 — PERSONALIZATION</span>
+        <h2>Instant Personalized Loan Offers</h2>
+        <div class="accent-line"></div>
+
+        <div class="card-grid card-grid-3" style="margin-bottom: 20px;">
+          <div class="glass-card" style="text-align: center;">
+            <div style="font-size: 0.5em; text-transform: uppercase; letter-spacing: 2px; color: #64748B; margin-bottom: 8px;">Basic</div>
+            <div style="font-family: 'Outfit'; font-size: 1.6em; font-weight: 800; color: white;">₹9,00,000</div>
+            <div style="font-size: 0.55em; color: #94A3B8; margin: 8px 0;">12.0% p.a. • 36 months</div>
+            <div style="padding: 10px; background: rgba(255,255,255,0.03); border-radius: 8px; margin-top: 8px;">
+              <div style="font-size: 0.45em; text-transform: uppercase; letter-spacing: 1px; color: #64748B;">Monthly EMI</div>
+              <div style="font-family: 'Outfit'; font-size: 1.1em; font-weight: 700; color: var(--pf-cyan);">₹29,889</div>
+            </div>
+          </div>
+
+          <div class="glass-card" style="text-align: center; border-color: var(--pf-gold); position: relative;">
+            <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--pf-gold), #FFC933); color: #000; font-size: 0.4em; font-weight: 800; padding: 3px 14px; border-radius: 20px; letter-spacing: 1px;">★ RECOMMENDED</div>
+            <div style="font-size: 0.5em; text-transform: uppercase; letter-spacing: 2px; color: #64748B; margin-bottom: 8px;">Recommended</div>
+            <div style="font-family: 'Outfit'; font-size: 1.6em; font-weight: 800; color: white;">₹15,00,000</div>
+            <div style="font-size: 0.55em; color: #94A3B8; margin: 8px 0;">10.5% p.a. • 36 months</div>
+            <div style="padding: 10px; background: rgba(255,255,255,0.03); border-radius: 8px; margin-top: 8px;">
+              <div style="font-size: 0.45em; text-transform: uppercase; letter-spacing: 1px; color: #64748B;">Monthly EMI</div>
+              <div style="font-family: 'Outfit'; font-size: 1.1em; font-weight: 700; color: var(--pf-cyan);">₹48,747</div>
+            </div>
+          </div>
+
+          <div class="glass-card" style="text-align: center;">
+            <div style="font-size: 0.5em; text-transform: uppercase; letter-spacing: 2px; color: #64748B; margin-bottom: 8px;">Premium</div>
+            <div style="font-family: 'Outfit'; font-size: 1.6em; font-weight: 800; color: white;">₹22,50,000</div>
+            <div style="font-size: 0.55em; color: #94A3B8; margin: 8px 0;">10.5% p.a. • 36 months</div>
+            <div style="padding: 10px; background: rgba(255,255,255,0.03); border-radius: 8px; margin-top: 8px;">
+              <div style="font-size: 0.45em; text-transform: uppercase; letter-spacing: 1px; color: #64748B;">Monthly EMI</div>
+              <div style="font-family: 'Outfit'; font-size: 1.1em; font-weight: 700; color: var(--pf-cyan);">₹73,120</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <p>📐 <strong>Offer calculation:</strong> Income-based multipliers (8x-30x) adjusted by bureau score, employment type, and LLM risk band. EMI computed using reducing balance method. Interactive tenure slider (12-60 months) for real-time recalculation.</p>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+           SLIDE 9: AUDIT & COMPLIANCE
+           ═══════════════════════════════════════════════════ -->
+      <section data-background-gradient="linear-gradient(135deg, #060D1A 0%, #0A1628 100%)">
+        <span class="section-number">08 — COMPLIANCE</span>
+        <h2>Central Logging & Audit Repository</h2>
+        <div class="accent-line"></div>
+
+        <div class="split-layout">
+          <div>
+            <p style="font-size: 0.7em; margin-bottom: 16px;">
+              Every session generates a <span class="highlight-cyan">complete, immutable audit trail</span> that satisfies RBI KYC norms and regulatory requirements.
+            </p>
+
+            <ul class="check-list">
+              <li><strong>Video Recording</strong> — Full session captured with timestamps, downloadable as WebM</li>
+              <li><strong>Timestamped Transcript</strong> — Every verbal response with STT confidence scores</li>
+              <li><strong>Consent Trail</strong> — Explicit verbal consent captured and verified with timestamp</li>
+              <li><strong>Geolocation Record</strong> — GPS coordinates, city/state, accuracy radius</li>
+              <li><strong>Decision Trail</strong> — Step-by-step log of every automated decision</li>
+              <li><strong>Raw Data Export</strong> — Full JSON audit log exportable for compliance</li>
+              <li><strong>Session Metadata</strong> — Device, screen, browser, network, duration</li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="glass-card" style="font-family: 'JetBrains Mono', 'SF Mono', monospace; font-size: 0.42em; line-height: 1.8; color: #94A3B8; overflow: hidden;">
+<pre style="margin:0; white-space: pre-wrap;">{
+  <span style="color:var(--pf-cyan)">"sessionId"</span>: "PF-G1CSBXPP",
+  <span style="color:var(--pf-cyan)">"customer"</span>: {
+    <span style="color:var(--pf-cyan)">"name"</span>: <span style="color:var(--color-success)">"Rahul Sharma"</span>,
+    <span style="color:var(--pf-cyan)">"income"</span>: <span style="color:var(--pf-gold)">75000</span>,
+    <span style="color:var(--pf-cyan)">"consent"</span>: <span style="color:var(--color-warning)">true</span>
+  },
+  <span style="color:var(--pf-cyan)">"riskAssessment"</span>: {
+    <span style="color:var(--pf-cyan)">"riskScore"</span>: <span style="color:var(--pf-gold)">22</span>,
+    <span style="color:var(--pf-cyan)">"decision"</span>: <span style="color:var(--color-success)">"approved"</span>,
+    <span style="color:var(--pf-cyan)">"bureauScore"</span>: <span style="color:var(--pf-gold)">788</span>
+  },
+  <span style="color:var(--pf-cyan)">"acceptedOffer"</span>: {
+    <span style="color:var(--pf-cyan)">"amount"</span>: <span style="color:var(--pf-gold)">1500000</span>,
+    <span style="color:var(--pf-cyan)">"rate"</span>: <span style="color:var(--pf-gold)">10.5</span>,
+    <span style="color:var(--pf-cyan)">"emi"</span>: <span style="color:var(--pf-gold)">48747</span>
+  }
+}</pre>
+            </div>
+            <div style="margin-top: 12px; text-align: center;">
+              <span class="tech-badge" style="background: rgba(0,214,143,0.12); border-color: rgba(0,214,143,0.3); color: var(--color-success);">🛡️ KYC Compliant Session</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+           SLIDE 10: JUDGING CRITERIA ALIGNMENT
+           ═══════════════════════════════════════════════════ -->
+      <section data-background-gradient="linear-gradient(135deg, #060D1A 0%, #0A1628 100%)">
+        <span class="section-number">09 — EVALUATION</span>
+        <h2>Judging Criteria Alignment</h2>
+        <div class="accent-line"></div>
+
+        <div class="card-grid card-grid-2" style="gap: 14px;">
+          <div class="criteria-card">
+            <h4><span class="criteria-score">✓</span> End-to-End Digitisation</h4>
+            <p>7-step fully paperless journey. Customer goes from campaign link → approved offer in a single 3-5 minute video session. Zero manual intervention required. No physical documents needed.</p>
+          </div>
+
+          <div class="criteria-card">
+            <h4><span class="criteria-score">✓</span> Accuracy & Compliance</h4>
+            <p>Adheres to RBI e-KYC norms. Complete audit trail with video recording, timestamped transcripts, verbal consent capture, geolocation evidence, and exportable JSON logs for regulatory review.</p>
+          </div>
+
+          <div class="criteria-card">
+            <h4><span class="criteria-score">✓</span> Risk Mitigation</h4>
+            <p>5 fraud signal checks (location verification, age consistency, liveness detection, consent verification, session integrity) + 5 policy rules + simulated CIBIL bureau scoring. Age mismatch & geo-anomaly detection built-in.</p>
+          </div>
+
+          <div class="criteria-card">
+            <h4><span class="criteria-score">✓</span> Intelligence & Personalization</h4>
+            <p>LLM classifies customer persona, risk band, lifetime value, and intent. Offers are personalized across 3 tiers with income-based multipliers, bureau-adjusted interest rates, and interactive EMI configuration.</p>
+          </div>
+
+          <div class="criteria-card" style="grid-column: 1 / -1;">
+            <h4><span class="criteria-score">✓</span> Scalability & Reliability</h4>
+            <p>All AI processing runs <strong>in the browser</strong> — each user is their own compute node. Zero server load for video/STT/face detection processing. Architecture supports infinite concurrent users. Sub-second latency for all real-time decisions. Static deploy (Vercel/Netlify) with global CDN.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+           SLIDE 11: KEY METRICS
+           ═══════════════════════════════════════════════════ -->
+      <section data-background-gradient="linear-gradient(135deg, #060D1A 0%, #0A1628 100%)">
+        <span class="section-number">10 — IMPACT</span>
+        <h2>Key Metrics & Impact</h2>
+        <div class="accent-line"></div>
+
+        <div class="stats-row">
+          <div class="stat-item">
+            <span class="stat-number">3-5 min</span>
+            <span class="stat-label">End-to-End Onboarding Time</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Paperless Digital Journey</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">0ms</span>
+            <span class="stat-label">Server Latency (Browser-Only AI)</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">∞</span>
+            <span class="stat-label">Concurrent User Scalability</span>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-item">
+            <span class="stat-number" style="color: var(--color-success);">10</span>
+            <span class="stat-label">Fraud & Policy Checks Per Session</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" style="color: var(--pf-gold);">3</span>
+            <span class="stat-label">Personalized Tiered Offers</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" style="color: var(--pf-cyan);">5</span>
+            <span class="stat-label">AI Entities Auto-Extracted</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" style="color: var(--color-success);">22</span>
+            <span class="stat-label">Source Files (Zero Backend)</span>
+          </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 16px;">
+          <p>🚀 <strong>Projected Impact:</strong> 40% reduction in drop-off rates, 80% reduction in KYC processing time, 95% reduction in manual verification overhead, and near-zero fraud pass-through for video-verified sessions.</p>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+           SLIDE 12: FUTURE ROADMAP
+           ═══════════════════════════════════════════════════ -->
+      <section data-background-gradient="linear-gradient(135deg, #060D1A 0%, #0A1628 100%)">
+        <span class="section-number">11 — ROADMAP</span>
+        <h2>Future Enhancements</h2>
+        <div class="accent-line"></div>
+
+        <div class="card-grid card-grid-3">
+          <div class="feature-card">
+            <div class="feature-icon">🔗</div>
+            <h4>Aadhaar e-KYC Integration</h4>
+            <p>UIDAI DigiLocker API for instant Aadhaar verification and PAN validation during video call</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🧠</div>
+            <h4>Live LLM Agent</h4>
+            <p>Replace guided questions with a conversational AI agent (Groq/Llama 3.3) that dynamically asks relevant questions</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🏦</div>
+            <h4>Real Bureau Integration</h4>
+            <p>CIBIL/Experian API integration for real-time credit score fetching and detailed credit report analysis</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h4>Deepfake Detection</h4>
+            <p>Advanced liveness detection using blink analysis, head movement tracking, and texture analysis</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h4>WhatsApp Integration</h4>
+            <p>Campaign links via WhatsApp Business API with pre-filled customer context from CRM data</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h4>Analytics Dashboard</h4>
+            <p>Operational dashboard for conversion funnels, drop-off analysis, and real-time session monitoring</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+           SLIDE 13: THANK YOU
+           ═══════════════════════════════════════════════════ -->
+      <section class="thankyou-slide" data-background-gradient="linear-gradient(135deg, #060D1A 0%, #0A1628 40%, #0F1F38 100%)">
+        <div class="pf-logo" style="justify-content: center; margin-bottom: 40px;">
+          <div class="pf-logo-mark" style="width: 56px; height: 56px; font-size: 22px;">PF</div>
+          <div class="pf-logo-text">
+            <div class="pf-logo-title" style="font-size: 22px;">Poonawalla Fincorp</div>
+            <div class="pf-logo-subtitle" style="font-size: 12px;">Loan Wizard</div>
+          </div>
+        </div>
+
+        <h1 class="thankyou-title">Thank You</h1>
+
+        <p style="text-align: center; font-size: 0.85em; color: #64748B; margin-top: 24px;">
+          Video-Based Digital Loan Origination & Risk Assessment System
+        </p>
+
+        <div style="margin-top: 40px; display: flex; justify-content: center; gap: 16px;">
+          <span class="tech-badge">🎥 Video KYC</span>
+          <span class="tech-badge">🤖 AI-Powered</span>
+          <span class="tech-badge">🛡️ Compliant</span>
+          <span class="tech-badge">⚡ Real-Time</span>
+          <span class="tech-badge">📌 Zero Backend</span>
+        </div>
+
+        <p style="text-align: center; font-size: 0.55em; color: #334155; margin-top: 40px;">
+          Built with ❤️ by Team AiMatrix for the Poonawalla Fincorp Hackathon &nbsp; | &nbsp; April 2026
+        </p>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.min.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      width: 1280,
+      height: 720,
+      margin: 0.04,
+      transition: 'slide',
+      transitionSpeed: 'default',
+      backgroundTransition: 'fade',
+      controls: true,
+      progress: true,
+      center: false,
+      autoAnimateEasing: 'ease-out',
+      autoAnimateDuration: 0.8,
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poonawalla Fincorp Loan Wizard — Video KYC & Instant Loan Offers</title>
+  <meta name="description" content="Experience seamless digital loan onboarding with Poonawalla Fincorp's AI-powered Video KYC. Get instant, personalized loan offers with minimal effort." />
+  <meta name="theme-color" content="#0A1628" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body>
+  <!-- Animated Background -->
+  <div id="bg-canvas" class="bg-canvas">
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+  </div>
+
+  <!-- Step Progress Bar -->
+  <header id="app-header" class="app-header hidden">
+    <div class="header-inner">
+      <div class="header-logo">
+        <div class="logo-mark">PF</div>
+        <div class="logo-text">
+          <span class="logo-title">Poonawalla Fincorp</span>
+          <span class="logo-subtitle">Loan Wizard</span>
+        </div>
+      </div>
+      <div class="step-progress" id="step-progress">
+        <div class="step-track">
+          <div class="step-fill" id="step-fill"></div>
+        </div>
+        <div class="step-indicators" id="step-indicators"></div>
+      </div>
+      <div class="header-session" id="header-session">
+        <span class="session-badge" id="session-id-badge"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="app" class="app-container"></main>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- App Script -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
