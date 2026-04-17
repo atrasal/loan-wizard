@@ -3,7 +3,7 @@
  * video playback, transcript, decision log, and export options
  */
 import { logger, LOG_CATEGORIES } from '../utils/logger.js';
-import { formatDateTime, formatCurrency, formatPercent } from '../utils/helpers.js';
+import { formatDateTime, formatCurrency, formatPercent, showToast } from '../utils/helpers.js';
 import { recorder } from '../modules/recorder.js';
 
 export function renderAuditDashboard() {
@@ -363,12 +363,4 @@ function getDeviceName() {
   return 'Unknown';
 }
 
-function showToast(msg, type) {
-  const container = document.getElementById('toast-container');
-  if (!container) return;
-  const el = document.createElement('div');
-  el.className = `toast toast--${type}`;
-  el.innerHTML = `<span class="toast-message">${msg}</span>`;
-  container.appendChild(el);
-  setTimeout(() => { el.classList.add('toast-exit'); setTimeout(() => el.remove(), 300); }, 3000);
-}
+

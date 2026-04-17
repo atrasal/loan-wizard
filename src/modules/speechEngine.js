@@ -124,20 +124,26 @@ class SpeechEngine {
     // Extract name (patterns: "my name is X", "I am X", "this is X")
     const namePatterns = [
       /my name is ([a-zA-Z\s]+)/i,
-      /i am ([a-zA-Z\s]+)/i,
-      /this is ([a-zA-Z\s]+)/i,
       /name is ([a-zA-Z\s]+)/i,
+      /this is ([a-zA-Z\s]+)/i,
       /myself ([a-zA-Z\s]+)/i,
+      /i am ([a-zA-Z\s]+)/i, // Last priority — can match employment phrases
     ];
     for (const pattern of namePatterns) {
       const match = text.match(pattern);
       if (match && match[1] && match[1].trim().length > 2) {
         const name = match[1].trim().split(/\s+/).slice(0, 4).join(' ');
         // Filter out common false positives
-        const skip = ['salaried', 'self', 'employed', 'looking', 'interested', 'yes', 'no'];
-        if (!skip.includes(name.toLowerCase())) {
+        const skip = [
+          'salaried', 'self', 'employed', 'looking', 'interested', 'yes', 'no',
+          'working', 'earning', 'getting', 'making', 'doing', 'seeking',
+          'a salaried', 'self employed', 'a business', 'an employee',
+        ];
+        const lowerName = name.toLowerCase();
+        if (!skip.some(s => lowerName.startsWith(s))) {
           this.entities.name = this._titleCase(name);
           this._emitEntity('name', this.entities.name);
+          break; // Stop after first valid match
         }
       }
     }
